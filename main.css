@@ -7,7 +7,7 @@ body, html {
 
 body {
   font-family: Roboto;
-  font-size: 12px;
+  font-size: 16px;
   color: #424242;
   min-width: 320px;
 }
@@ -63,9 +63,11 @@ ul {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .header__logo {
+  width: 15%;
   height: 7em;
   margin-right: 1em;
   vertical-align: top;
@@ -73,8 +75,9 @@ ul {
 }
 
 .header__title {
+  width: 85%;
   font-weight: 300;
-  font-size: 4em;
+  font-size: 3em;
   margin: 0.5em 0.25em;
   display: inline-block;
   color: #212121;
@@ -89,7 +92,7 @@ ul {
 
 .menu__icon {
   font-size: 2em;
-  visibility: hidden;
+  display: none;
   line-height: 56px;
   display: inline-block;
 }
@@ -159,8 +162,8 @@ main {
 
 .hero {
   position: relative;
-  background-image: url("https://i.imgur.com/YOqiJ5q.jpg");
-  background-size: 100%;
+  background-image: url("images/dog.jpg");
+  background-size: cover;
   min-height: 300px;
 }
 
@@ -170,10 +173,10 @@ main {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0;
-  height: 40%;
+  height: auto;
   width: 100%;
   color: #fff;
-  padding: 1em;
+  padding: 1em; 
 }
 
 
@@ -231,6 +234,7 @@ main {
 
 .scores {
   width: 100%;
+  font-size: 14px;
   padding-top: 1em;
 }
 
@@ -342,10 +346,19 @@ main {
   margin: 24px 0;
 }
 
+.snippet p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+}
+
 .snippet__thumbnail {
-  width: 100px;
+  width: 20%;
+  min-width: 150px;
   float: left;
   margin-right: 1em;
+  margin-top: 1em;
 }
 
 .snippet__title {
@@ -394,7 +407,7 @@ footer a {
 *
 */
 
-@media screen and (max-width: 465px) {
+@media screen and (max-width: 515px) {
   .header__title {
     font-size: 2em;
   }
@@ -404,7 +417,15 @@ footer a {
   }
 
   .menu__icon {
-    visibility: visible;
+    display: inline;
+  }
+
+  th:nth-of-type(2) {
+    display: none;
+  }
+
+  td:nth-of-type(2) {
+    display: none;
   }
 
   .hero {
@@ -412,7 +433,7 @@ footer a {
   }
 }
 
-@media screen and (min-width: 466px) and (max-width: 700px) {
+@media screen and (min-width: 516px) and (max-width: 700px) {
   .header__title {
     font-size: 2.5em;
   }
@@ -426,9 +447,21 @@ footer a {
     line-height: 72px;
     font-size: 2.5em;
   }
+
+  th:nth-of-type(2) {
+    display: none;
+  }
+
+  td:nth-of-type(2) {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 701px) {
+
+  body {
+    font-size: 18px;
+  }
 
   .header.margined {
     max-width: 100%;
@@ -472,6 +505,10 @@ footer a {
     color: #212121;
   }
 
+  .menu__icon {
+    display: none;
+  }
+
   .content {
     display: flex;
     flex-wrap: wrap;
@@ -496,6 +533,14 @@ footer a {
     width: 50%;
   }
 
+  th:nth-of-type(2) {
+    display: none;
+  }
+
+  td:nth-of-type(2) {
+    display: none;
+  }
+
   .recent-news {
     order: 4;
   }
@@ -506,5 +551,12 @@ footer a {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+  }
+  th:nth-of-type(2) {
+    display: block;
+  }
+
+  td:nth-of-type(2) {
+    display: block;
   }
 }
